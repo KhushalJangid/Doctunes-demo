@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Translation Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="modal.css">
+        <link rel="stylesheet" href="output.css">
+        <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5482c79e6d.js"
+      crossorigin="anonymous"
+    ></script>
+    </head>
+    <body>
+        <!-- Nav Bar -->
+        <nav
+          class="h-20 flex justify-between pl-20 z-[100] bg-white fixed top-0 left-0 right-0 shadow-lg w-full"
+        >
+          <!-- Logo -->
+          <div class="nav-left pt-2 h-full flex flex-col">
+            <div class="text-right">
+              <p class="text-4xl font-semibold font-primary">
+                Doc<span class="text-blue-500">Tunes</span>
+              </p>
+            </div>
+            <div class="text-right flex items-center justify-end">
+              <p
+                class="bg-blue-500 text-white rounded-lg px-2 pb-1 text-center font-semibold"
+              >
+                For Business
+              </p>
+            </div>
+          </div>
+          <!-- End of logo -->
+          <!-- NavBar Mid -->
+          <div class="w-2/5">
+            <ul class="flex h-full justify-between">
+              <li
+                class="flex items-center border-b-2 border-blue-500 text-blue-500 hover:cursor-pointer"
+              >
+                <a href="#" class="font-semibold text-xl">Home</a>
+              </li>
+              <li
+                class="flex group items-center hover:border-b-2 hover:border-blue-500 hover:text-blue-500 hover:cursor-pointer"
+              >
+                <a href="#" class="font-semibold text-xl">Product</a>
+                <!-- Dropdown menu -->
+                <div
+                  class="absolute hidden bg-white top-16 mt-2 py-2 rounded-md shadow-2xl group-hover:block"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-black hover:bg-blue-500 hover:text-white hover:rounded-md"
+                    >Website Translation</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-black hover:bg-blue-500 hover:text-white hover:rounded-md"
+                    >Document Translation</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-black hover:bg-blue-500 hover:text-white hover:rounded-md"
+                    >Text Translation</a
+                  >
+                </div>
+                <!-- End of Dropdown Menu -->
+              </li>
+              <li
+                class="flex group items-center hover:border-b-2 hover:border-blue-500 hover:text-blue-500 hover:cursor-pointer"
+              >
+                <a href="#" class="font-semibold text-xl">Industries</a>
+                <!-- Dropdown menu -->
+                <div
+                  class="absolute hidden bg-white top-16 mt-2 py-2 rounded-md shadow-2xl group-hover:block"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-black hover:bg-blue-500 hover:text-white hover:rounded-md"
+                    >Ecommerce</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-black hover:bg-blue-500 hover:text-white hover:rounded-md"
+                    >Publishing media</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-black hover:bg-blue-500 hover:text-white hover:rounded-md"
+                    >E-Learning</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-black hover:bg-blue-500 hover:text-white hover:rounded-md"
+                    >Banking & Finance</a
+                  >
+                </div>
+                <!-- End of Dropdown Menu -->
+              </li>
+              <li
+                class="flex items-center hover:border-b-2 hover:border-blue-500 hover:text-blue-500 hover:cursor-pointer"
+              >
+                <a href="#" class="font-semibold text-xl">About Us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- End of NavBar Mid -->
+          <!-- Navbar right -->
+          <div
+            class="w-[30%] flex gap-5 justify-center items-center clip-my-style bg-blue-500"
+          >
+            <a
+              href="#"
+              class="primary-btn px-0 py-2 bg-white w-1/4 text-blue-500 hover:border-white hover:text-white"
+              >Log in</a
+            >
+            <a
+              href="#"
+              class="primary-btn px-0 py-2 bg-white w-1/4 text-blue-500 hover:border-white hover:text-white"
+              >Sign Up</a
+            >
+          </div>
+          <!-- End of navbar right-->
+        </nav>
+        <!-- End of Navbar -->
+        <div class="my-bg pt-2 px-24 pb-32">
+          <!-- Hero -->
+          <div class="mt-24 max-h-fit flex flex-col">
+            <h1 class="text-7xl font-semibold">
+              Text <span class="text-blue-500">Translation</span>
+            </h1>
+            <div class="grid grid-cols-2 gap-x-20 gap-y-16 py-5 mt-12">
+              <div class="text-center">
+                <button class="border-btn w-1/4 bg-transparent" id="srcLangButton">English</button>
+                <input id="srcLang" value="en" hidden>
+              </div>
+              <div class="text-center">
+                <button class="primary-btn max-w-fit px-4" id="tgtLangButton">Select Language</button>
+                <input id="tgtLang" value="" hidden>
+              </div>
+              <textarea
+              id="input"
+                class="w-full h-96 text-center p-2 rounded-2xl border-2 border-blue-500 text-2xl text-black"
+                placeholder="Type the text you want to translate"
+                name="text"
+              ></textarea>
+              <textarea
+              id="output"
+                class="w-full h-96 text-center p-2 rounded-2xl border-2 border-blue-500 text-2xl text-black"
+                placeholder="Output"
+              ></textarea>
+            </div>
+            <button class="primary-btn w-1/5 m-auto" id="translate-btn">Translate</button>
+          </div>
+          <!-- End of Hero -->
+          <!-- Happy Section -->
+          <section class="mt-24">
+            <h2 class="text-6xl font-semibold text-center">
+              Our Happy <span class="text-blue-500">Customers</span>
+            </h2>
+            <div
+              class="h-48 mt-14 rounded-3xl border-2 border-gray-300 bg-gray-50 flex px-10 py-2"
+            >
+              <div class="h-full w-1/4 border-r-2">
+                <img
+                  src="images/partner-1.png"
+                  alt=""
+                  class="partner"
+                />
+              </div>
+              <div class="h-full w-1/4 border-r-2">
+                <img
+                  src="images/partner-2.png"
+                  alt=""
+                  class="partner"
+                />
+              </div>
+              <div class="h-full w-1/4 border-r-2">
+                <img
+                  src="images/partner-3.png"
+                  alt=""
+                  class="partner"
+                />
+              </div>
+              <div class="h-full w-1/4 border-r-2">
+                <img
+                  src="images/partner-4.png"
+                  alt=""
+                  class="partner"
+                />
+              </div>
+            </div>
+          </section>
+          <!-- End of Happpy Section -->
+          <!-- Features Section -->
+          <section class="mt-24 px-10">
+            <h2 class="text-7xl font-semibold text-center">Features</h2>
+            <div class="flex justify-center items-center mt-5">
+              <div class="w-8 rounded-lg border-2 border-yellow-300"></div>
+              <div class="rhombus bg-black w-5 h-5"></div>
+              <div class="w-8 rounded-lg border-2 border-yellow-300"></div>
+            </div>
+            <div class="flex justify-between gap-40 mt-20">
+              <div class="w-2/4">
+                <h3 class="text-4xl font-bold leading-relaxed">
+                  Translate your Text
+                  <span class="text-blue-500">seamlessly with DocTunes!</span>
+                </h3>
+                <p class="mt-5 text-lg leading-relaxed tracking-wider">
+                  DocTunes offers a streamlined solution for swiftly translating
+                  your text in real-time. Say goodbye to complexities - our
+                  plug-and-play approach ensures effortless multilingual expansion
+                  without altering your code or infrastructure. Make your website a
+                  global sensation in no time!
+                </p>
+              </div>
+              <div class="w-2/4">
+                <img
+                  src="images/Features-1.svg"
+                  alt="Features-1"
+                  class="object-contain"
+                />
+              </div>
+            </div>
+            <div class="flex justify-between gap-40 mt-28">
+              <div class="w-2/5">
+                <img
+                  src="images/Features-2.png"
+                  alt="Features-1"
+                  class="object-contain"
+                />
+              </div>
+              <div class="w-2/4">
+                <h3 class="text-4xl font-bold leading-relaxed">
+                  Speedy Results: DocTunes AI-driven translation
+                  <span class="text-blue-500"
+                    >platform handles big projects quickly</span
+                  >
+                </h3>
+                <p class="mt-5 text-lg leading-relaxed tracking-wider">
+                  Rapid Output: Thanks to DocTunes advanced AI-driven translation
+                  platform, we're equipped to efficiently handle substantial
+                  translation projects, ensuring a swift turnaround time. This means
+                  your projects get done faster without compromising on quality.
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-between gap-40 mt-28">
+              <div class="w-2/4">
+                <h3 class="text-4xl font-bold leading-relaxed">
+                  Optimal Pricing: Our blend of AI and human
+                  <span class="text-blue-500"
+                    >translation ensures competitive rates for our clients</span
+                  >
+                </h3>
+                <p class="mt-5 text-lg leading-relaxed tracking-wider">
+                  Competitive Rates: By harnessing the synergy of AI and human
+                  translation, we provide our clients with cost-effective solutions.
+                  This unique combination allows us to maintain quality while
+                  offering rates that cater to your budget
+                </p>
+              </div>
+              <div class="w-2/4">
+                <img
+                  src="images/Features-3.png"
+                  alt="Features-1"
+                  class="object-contain"
+                />
+              </div>
+            </div>
+          </section>
+          <!-- End of Features Section -->
+          <!-- Customer Review -->
+          <section class="mt-32">
+            <h2 class="text-5xl font-semibold text-center">
+              What our Customers say <span class="text-blue-500">about us</span>
+            </h2>
+            <p class="text-2xl tracking-wide text-gray-400 mt-5 text-center">
+              Itech loved from thousands customer worldwide and get trusted from big
+              companies.
+            </p>
+            <!-- Slider -->
+            <div
+              class="h-96 mt-10 mx-auto relative overflow-hidden flex slider-container"
+            >
+              <div class="w-full h-full absolute flex justify-evenly silde">
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      At Localeyes, we believe in bridging the gap between locals
+                      and communities and the digital realm. Thanks to DocTunes,
+                      we've been able to reach an even wider audience across India.
+                      Their seamless integration made translating our platform into
+                      multiple Indian languages a breeze. With just a click,
+                      DocTunes has opened up a world of local connections for us. It
+                      is a must-have service for any business aiming to truly
+                      connect with a diverse Indian audience. Thank you, DocTunes!
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-1.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Sandeep <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      Thanks to DocTunes, we've been able to deliver local news and
+                      knowledge to even more villages in their native languages.
+                      Simple to use and incredibly effective, their translation
+                      services are a game-changer for us. Grateful to DocTunes for
+                      helping us connect deeper with rural India.
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-2.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Vaibhav <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      At MyBodyAffair, we believe in the beauty of diversity. When
+                      we decided to expand our reach, DocTunes ensured our message
+                      wasn't lost in translation. Every product description, every
+                      review, and every guide now speaks to our customers in their
+                      native tongue. This level of clarity and connection has been a
+                      game-changer for our brand. Hats off to the DocTunes team!
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-3.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Yuvraj <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full h-full absolute flex justify-evenly silde">
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      At Localeyes, we believe in bridging the gap between locals
+                      and communities and the digital realm. Thanks to DocTunes,
+                      we've been able to reach an even wider audience across India.
+                      Their seamless integration made translating our platform into
+                      multiple Indian languages a breeze. With just a click,
+                      DocTunes has opened up a world of local connections for us. It
+                      is a must-have service for any business aiming to truly
+                      connect with a diverse Indian audience. Thank you, DocTunes!
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-1.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Sandeep <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      Thanks to DocTunes, we've been able to deliver local news and
+                      knowledge to even more villages in their native languages.
+                      Simple to use and incredibly effective, their translation
+                      services are a game-changer for us. Grateful to DocTunes for
+                      helping us connect deeper with rural India.
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-2.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Vaibhav <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      At MyBodyAffair, we believe in the beauty of diversity. When
+                      we decided to expand our reach, DocTunes ensured our message
+                      wasn't lost in translation. Every product description, every
+                      review, and every guide now speaks to our customers in their
+                      native tongue. This level of clarity and connection has been a
+                      game-changer for our brand. Hats off to the DocTunes team!
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-3.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Yuvraj <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full h-full absolute flex justify-evenly silde">
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      At Localeyes, we believe in bridging the gap between locals
+                      and communities and the digital realm. Thanks to DocTunes,
+                      we've been able to reach an even wider audience across India.
+                      Their seamless integration made translating our platform into
+                      multiple Indian languages a breeze. With just a click,
+                      DocTunes has opened up a world of local connections for us. It
+                      is a must-have service for any business aiming to truly
+                      connect with a diverse Indian audience. Thank you, DocTunes!
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-1.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Sandeep <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      Thanks to DocTunes, we've been able to deliver local news and
+                      knowledge to even more villages in their native languages.
+                      Simple to use and incredibly effective, their translation
+                      services are a game-changer for us. Grateful to DocTunes for
+                      helping us connect deeper with rural India.
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-2.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Vaibhav <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="flex w-[30%] h-full flex-col justify-evenly">
+                  <div class="bg-white w-full px-2 min-h-[70%] flex items-center">
+                    <p class="text-gray-500 text-center">
+                      At MyBodyAffair, we believe in the beauty of diversity. When
+                      we decided to expand our reach, DocTunes ensured our message
+                      wasn't lost in translation. Every product description, every
+                      review, and every guide now speaks to our customers in their
+                      native tongue. This level of clarity and connection has been a
+                      game-changer for our brand. Hats off to the DocTunes team!
+                    </p>
+                  </div>
+                  <div class="flex gap-10 items-center">
+                    <img
+                      src="images/review-3.svg"
+                      alt="customer-sandeep"
+                      class="w-24 h-24 rounded-full"
+                    />
+                    <h2 class="font-semibold text-4xl">
+                      Yuvraj <br />
+                      <span class="text-xl">Rajasthan</span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="rounded-full h-20 w-20 absolute top-[50%] left-10 -translate-y-1/2 -translate-x-1/2 bg-white z-[30] shadow-2xl"
+                id="prevBtn"
+              >
+                <i class="fa-solid fa-left-long text-2xl"></i>
+              </button>
+              <button
+                class="rounded-full h-20 w-20 absolute top-[50%] right-0 -translate-y-1/2 z-[30] bg-white shadow-2xl"
+                id="nextBtn"
+              >
+                <i class="fa-solid fa-right-long text-2xl"></i>
+              </button>
+            </div>
+            <!-- End of slider -->
+          </section>
+          <!-- End of Customer Review -->
+          <!-- Demo -->
+          <section class="mt-32">
+            <h2 class="text-6xl font-semibold text-center">
+              Request a <span class="text-blue-500">Demo</span>
+            </h2>
+    
+            <div class="mt-20 flex gap-10">
+              <div class="w-[70%] rounded-xl bg-white px-3">
+                <form action="">
+                  <div class="grid grid-cols-2 gap-y-10 gap-x-5 my-20">
+                    <div class="w-full h-16 rounded-2xl border-2 border-blue-500">
+                      <input
+                        type="text"
+                        placeholder="Full Name*"
+                        class="w-full h-full rounded-xl py-2 px-3 bg-transparent text-lg"
+                        required
+                      />
+                    </div>
+                    <div class="w-full h-16 rounded-2xl border-2 border-blue-500">
+                      <input
+                        type="email"
+                        placeholder="E-Mail*"
+                        class="w-full h-full rounded-xl px-3 py-2 bg-transparent text-lg"
+                        required
+                      />
+                    </div>
+                    <div class="w-full h-16 rounded-2xl border-2 border-blue-500">
+                      <input
+                        type="number"
+                        placeholder="Phone*"
+                        class="w-full h-full rounded-xl px-3 py-2 bg-transparent text-lg"
+                        required
+                      />
+                    </div>
+                    <div class="w-full h-16 rounded-2xl border-2 border-blue-500">
+                      <input
+                        type="text"
+                        placeholder="Company Name"
+                        class="w-full h-full rounded-xl px-3 py-2 bg-transparent text-lg"
+                      />
+                    </div>
+                    <div
+                      class="w-full h-16 col-span-2 rounded-2xl border-2 border-blue-500"
+                    >
+                      <input
+                        type="text"
+                        placeholder="Subject*"
+                        class="w-full h-full rounded-xl py-2 px-3 bg-transparent text-lg"
+                        required
+                      />
+                    </div>
+                    <div
+                      class="w-full min-h-16 col-span-2 rounded-2xl border-2 border-blue-500"
+                    >
+                      <textarea
+                        name=""
+                        id=""
+                        class="w-full h-full rounded-xl py-2 px-3 text-lg bg-transparent"
+                        placeholder="Type Message*"
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="flex justify-center mb-20">
+                    <button class="primary-btn w-1/4 rounded-3xl">
+                      Submit Now
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="w-[30%]">
+                <div class="border-l-4 border-blue-500 mt-24 py-2">
+                  <p class="tracking-wider text-xl ml-8">
+                    As we understand your business is mostly about words, we not
+                    only translate language we transform business in the world of
+                    words.
+                  </p>
+                </div>
+                <div class="flex gap-10 px-5 mt-52">
+                  <button class="primary-btn rounded-3xl py-2">
+                    <i class="fa-solid fa-phone mr-1"></i>Call Us
+                  </button>
+                  <button class="primary-btn rounded-3xl py-2">
+                    <i class="fa-solid fa-envelope mr-1"></i>Mail Us
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End of Demo -->
+        </div>
+        <!-- Footer -->
+        <div class="w-full py-10 px-20 relative">
+          <!-- Logo -->
+          <div class="nav-left pt-2 h-full flex flex-col items-end max-w-fit">
+            <div class="max-w-fit">
+              <p class="text-4xl font-semibold font-primary">
+                Doc<span class="text-blue-500">Tunes</span>
+              </p>
+            </div>
+            <div class="flex max-w-fit">
+              <p
+                class="bg-blue-500 text-white rounded-lg px-2 pb-1 text-center font-semibold"
+              >
+                For Business
+              </p>
+            </div>
+          </div>
+          <!-- End of logo -->
+          <div class="grid grid-cols-4 gap-5 mt-10">
+            <div>
+              <ul>
+                <li class="text-4xl font-bold mb-5">DocTunes Products</li>
+                <li class="text-2xl my-2">Website translation</li>
+                <li class="text-2xl my-2">Document translation</li>
+                <li class="text-2xl my-2">Text translation</li>
+                <li class="text-2xl my-2">Transliteration API</li>
+                <li class="mt-10">
+                  <a
+                    href="#"
+                    class="px-[10px] py-2 border-2 rounded-full border-gray-500 mr-2"
+                    ><i class="fa-brands fa-twitter text-lg text-gray-500"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="px-[10px] py-2 border-2 rounded-full border-gray-500 mr-2"
+                    ><i class="fa-brands fa-instagram text-lg text-gray-500"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="px-[10px] py-2 border-2 rounded-full border-gray-500"
+                    ><i class="fa-brands fa-facebook text-lg text-gray-500"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li class="text-4xl font-bold mb-5">Industries</li>
+                <li class="text-2xl my-2">Ecommerce translation</li>
+                <li class="text-2xl my-2">Publishing media</li>
+                <li class="text-2xl my-2">Learning</li>
+                <li class="text-2xl my-2">Banking finance</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li class="text-4xl font-bold mb-5">Knowledge base</li>
+                <li class="text-2xl my-2">About Us</li>
+                <li class="text-2xl my-2">Blog</li>
+                <li class="text-2xl my-2">Contact Us</li>
+                <li class="text-2xl my-2">Join as translator</li>
+                <li class="text-2xl my-2">News</li>
+                <li class="text-2xl my-2">Docs</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li class="text-4xl font-bold mb-5">Policy</li>
+                <li class="text-2xl my-2">Terms and conditions</li>
+                <li class="text-2xl my-2">Privacy policy</li>
+                <li class="text-2xl my-2">Refund policy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- End of  Footer -->
+        <div id="sourceLanguageModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="flex">
+                <p>Select Source Languages</p>
+                <span id="src-modal-close" class="close">&times;</span>
+            </div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="as">
+                      Assamese
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="bn">
+                      Bengali
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="brx">
+                      Bodo
+                    </label>
+                  </td>
+                  <td >
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="doi">
+                      Dogri
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="en">
+                      English
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="en">
+                      Konkani
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="gu">
+                      Gujarati
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="hi">
+                      Hindi
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="kn">
+                      Kannada
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="ksa">
+                      Kashmiri (Arabic)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="ksd">
+                      Kashmiri (Devnagri)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="mai">
+                      Maithili
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="ml">
+                      Malayalam
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="mr">
+                      Marathi
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="mnib">
+                    Manipuri (Bengali)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="mnim">
+                      Manipuri (Meitei)
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="ne">
+                      Nepali
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="or">
+                      Odia
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="pa">
+                      Punjabi
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="sa">
+                      Sanskrit
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="sat">
+                      Santali
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="sda">
+                      Sindhi (Arabic)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="sdd">
+                      Sindhi (Devnagri)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="srclang" value="ta">
+                      Tamil
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                <td>
+                  <label class="form-control">
+                    <input type="radio" name="srclang" value="te">
+                    Telugu
+                  </label>
+                </td>
+                <td>
+                  <label class="form-control">
+                    <input type="radio" name="srclang" value="ur">
+                    Urdu
+                  </label>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <button id="src-modal-done" type="button">Done</button>
+          </div>
+        </div>
+        <div id="targetLanguageModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="flex">
+                <p>Select Target Languages</p>
+                <span id="tgt-modal-close" class="close">&times;</span>
+            </div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="as">
+                      Assamese
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="bn">
+                      Bengali
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="brx">
+                      Bodo
+                    </label>
+                  </td>
+                  <td >
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="doi">
+                      Dogri
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="en">
+                      English
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="en">
+                      Konkani
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="gu">
+                      Gujarati
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="hi">
+                      Hindi
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="kn">
+                      Kannada
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="ksa">
+                      Kashmiri (Arabic)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="ksd">
+                      Kashmiri (Devnagri)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="mai">
+                      Maithili
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="ml">
+                      Malayalam
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="mr">
+                      Marathi
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="mnib">
+                    Manipuri (Bengali)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="mnim">
+                      Manipuri (Meitei)
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="ne">
+                      Nepali
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="or">
+                      Odia
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="pa">
+                      Punjabi
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="sa">
+                      Sanskrit
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="sat">
+                      Santali
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="sda">
+                      Sindhi (Arabic)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="sdd">
+                      Sindhi (Devnagri)
+                    </label>
+                  </td>
+                  <td>
+                    <label class="form-control">
+                      <input type="radio" name="tgtlang" value="ta">
+                      Tamil
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                <td>
+                  <label class="form-control">
+                    <input type="radio" name="tgtlang" value="te">
+                    Telugu
+                  </label>
+                </td>
+                <td>
+                  <label class="form-control">
+                    <input type="radio" name="tgtlang" value="ur">
+                    Urdu
+                  </label>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <button id="tgt-modal-done" type="button">Done</button>
+          </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
