@@ -83,7 +83,7 @@ const srcModal = document.getElementById("sourceLanguageModal");
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          'Authorization':'Bearer d8ec9f0799f740f5945af85a085d8928'
+          'Ocp-Apim-Subscription-Key':'d8ec9f0799f740f5945af85a085d8928'
         },
         // body: JSON.stringify({
         //   src: srcLang.value,
@@ -91,8 +91,8 @@ const srcModal = document.getElementById("sourceLanguageModal");
         //   text: document.getElementById("input").value,
         // }),
         body:JSON.stringify({
-          "source_lang": srcLang.value,
-          "target_lang": tgtLang.value,
+          "source_lang": "eng_Latn",
+          "target_lang": "hin_Deva",
           "sentences":[document.getElementById("input").value]
         }),
         mode: 'cors'
