@@ -34,11 +34,11 @@ const srcModal = document.getElementById("sourceLanguageModal");
     });
   });
 
-  document
-    .getElementById("srcLangButton")
-    .addEventListener("click", function () {
-      srcModal.style.display = "flex";
-    });
+  //document
+  //  .getElementById("srcLangButton")
+  //  .addEventListener("click", function () {
+  //    srcModal.style.display = "flex";
+ //   });
   document
     .getElementById("tgtLangButton")
     .addEventListener("click", function () {
@@ -78,12 +78,12 @@ const srcModal = document.getElementById("sourceLanguageModal");
   };
   const translate = async function (text) {
     try {
-      const response = await fetch("http://20.81.13.11:80/api/v1/service/translation-service-gpu1/score", {
+      const response = await fetch("https://demoapidoctunes.azure-api.net/api/v1/service/translation-service-gpu1/score", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          'Authorization':'Bearer 27Tc5hdz1oUgKxIFAxgAwu6hBayxTtgO'
+          'Authorization':'Bearer d8ec9f0799f740f5945af85a085d8928'
         },
         // body: JSON.stringify({
         //   src: srcLang.value,
